@@ -898,17 +898,17 @@ body{
     text-align: center;
     font-size: 28px;
     color: #000;
-    transition: color .3s;
+    transition: opacity .3s;
 }
 #navBar .sideNav li a.first{
     overflow: hidden;
     border-radius: 50%;
-    color: #999;
-    opacity: .7;
+    /* opacity: 1; */
     background: url(../images/personal/4.png) no-repeat center /cover;
 }
-#navBar .sideNav li a:hover{
-    color: #999;
+#navBar .sideNav li a:hover,
+#navBar .sideNav li.active a{
+    opacity: 0.5;
 }
 
 @media screen and (max-width: 980px){
@@ -953,6 +953,26 @@ body{
         top: 0;
     }
     #navBar .sideNav.fixed{
+        position: static;
+        top: 0;
+    }
+}
+
+/* 吸顶样式 */
+#container.fixed  #per .personalall{
+    position: fixed;
+    top: 15px;
+}
+#container.fixed  #navBar .sideNav{
+    position: fixed;
+    top: 15px;
+}
+@media screen and (max-width: 980px){
+    #container.fixed #per .personalall{
+        position: static;
+        top: 0;
+    }
+    #container.fixed  #navBar .sideNav{
         position: static;
         top: 0;
     }
